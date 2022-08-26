@@ -85,12 +85,44 @@ class HomeScreen extends StatelessWidget {
                               .copyWith(color: Styles.primaryColor),
                         )),
                   ],
-                )
+                ),
               ],
             ),
           ),
           const Gap(15),
-          TicketView(),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            padding: const EdgeInsets.only(left: 20),
+            child: Row(
+              children: [
+                TicketView(),
+                TicketView(),
+              ],
+            ),
+          ),
+          const Gap(15),
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Hotels",
+                  style: Styles.headLineStyle2,
+                ),
+                InkWell(
+                    onTap: () {
+                      print("You are tapped");
+                    },
+                    child: Text(
+                      "Voir tout",
+                      style: Styles.textSyle
+                          .copyWith(color: Styles.primaryColor),
+                    )),
+              ],
+            ),
+          ),
+
         ],
       ),
     );
